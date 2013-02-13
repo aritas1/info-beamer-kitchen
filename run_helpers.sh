@@ -23,7 +23,7 @@ do
  wget $WEATHERCAM -t $WGET_TRIES --connect-timeout=$WGET_TIMEOUT --read-timeout=$WGET_TIMEOUT -O $TMP #>/dev/null 2>&1
  mv $TMP $ABSDIR/1.jpg
  echo "[`date`] got weathercam pic"
- #java -cp helper/ Clock kitchen_cycler/weather/analogclock/
+ java -cp $INFOBEAMER_CWD/helper/ Clock kitchen_cycler/weather/analogclock/ debug
  echo "[`date`] set clock"
  sleep 30
 done
