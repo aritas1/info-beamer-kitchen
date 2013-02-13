@@ -1,19 +1,31 @@
-# Installation
+# Info-Beamer for your kitchen
 ===================
 
-Depends on:
+## Depends on:
 * https://github.com/aamuuninen/info-beamer
-** Lua 5.1
 * https://github.com/aamuuninen/info-beamer-nodes
 * https://github.com/aritas1/barcodescanner
-** C
-** Java 7
 
+## Requirements:
+* Java 7
+* Lua 5.1
+* C
+* Linux System
+* Sudo
+* Udev Servie
+
+
+## Installing
 
 For install run:
 `./install.sh`
 
+## Updating
+
 For update run:
 `./update.sh`
 
+
+## Executing
+`./run.sh`
 
