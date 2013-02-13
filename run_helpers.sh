@@ -1,43 +1,29 @@
 #!/bin/bash
-echo $INFOBEAMER_CWD
+
+CONFIG_FILE=$INFOBEAMER_CWD/main.conf
+
+echo $CONFIG_FILE
+if [[ -f $CONFIG_FILE ]]; then
+        . $CONFIG_FILE
+fi
 
 SUBDIR="kitchen_cycler/weather"
 
 ABSDIR=$INFOBEAMER_CWD/$SUBDIR
-
-echo $ABSDIR
-
-#--connect-timeout=seconds
-#--read-timeout=seconds
-
-ret=`python -c 'import sys; print("%i" % (sys.hexversion<0x03000000))'`
-if [ $ret -eq 0 ]; then
-    echo "we require python version < 3"
-    PYTHON2=0
-else
-    PYTHON2=1
-    echo "python version is < 3"
-fi
+TMP=$ABSDIR/tmp
 
 while :
 do
- wget http://api.openweathermap.org/data/2.1/weather/city/2925177?type=json -O $ABSDIR/tempcurrent > /dev/null 2>&1
- mv $ABSDIR/tempcurrent $ABSDIR/current
+ wget $WEATHER -t $WGET_TRIES --connect-timeout=$WGET_TIMEOUT --read-timeout=$WGET_TIMEOUT -O $TMP #> /dev/null 2>&1
+ mv $TMP $ABSDIR/current
  echo "[`date`] got current"
- wget http://api.openweathermap.org/data/2.2/forecast/city/2925177?mode=daily_compact -O $ABSDIR/tempforecast > /dev/null 2>&1
- mv $ABSDIR/tempforecast $ABSDIR/forecast
+ wget $FORECAST -t $WGET_TRIES --connect-timeout=$WGET_TIMEOUT --read-timeout=$WGET_TIMEOUT -O $TMP #> /dev/null 2>&1
+ mv $TMP $ABSDIR/forecast
  echo "[`date`] got forecast"
- wget http://www.uniklinik-freiburg.de/modules/webcam/550/1.jpg -t 1 --read-timeout=3 -O $ABSDIR/temppic.jpg >/dev/null 2>&1
- mv $ABSDIR/temppic.jpg $ABSDIR/1.jpg
- echo "[`date`] got pic"
-
-if [ $PYTHON2 -eq 0 ]; then
- python $INFOBEAMER_CWD/helper/clock.py
-else
- python $INFOBEAMER_CWD/helper/clock_python2.py
-fi
- #uncomment following line if using python2
- #python analogclock/clock_python2.py
+ wget $WEATHERCAM -t $WGET_TRIES --connect-timeout=$WGET_TIMEOUT --read-timeout=$WGET_TIMEOUT -O $TMP #>/dev/null 2>&1
+ mv $TMP $ABSDIR/1.jpg
+ echo "[`date`] got weathercam pic"
+ #java -cp helper/ Clock kitchen_cycler/weather/analogclock/
  echo "[`date`] set clock"
  sleep 30
 done
