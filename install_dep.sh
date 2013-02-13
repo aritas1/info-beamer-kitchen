@@ -17,3 +17,6 @@ make -C ../info-beamer/
 
 echo ">>>>>>>>>>>>>>> Cloning Info-Beamer-Nodes <<<<<<<<<<<<<<<<<"
 git clone https://github.com/aamuuninen/info-beamer-nodes ../info-beamer-nodes
+
+echo ">>>>>>>>>>>>>>> Building helpers (clock - java) <<<<<<<<<<<<<<<<<"
+javac helper/Clock.java
