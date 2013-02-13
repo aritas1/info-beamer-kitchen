@@ -18,14 +18,18 @@
 ## Installing
 
 For install run:
+
 `./install.sh`
 
 ## Updating
 
 For update run:
+
 `./update.sh`
 
 
 ## Executing
+For running:
+
 `./run.sh`
 
