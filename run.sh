@@ -6,8 +6,6 @@ if [[ -f $CONFIG_FILE ]]; then
         . $CONFIG_FILE
 fi
 
-export INFOBEAMER_CWD=`pwd`
-
 echo "<<<<<<<<<<<<<<<<<<STARTING INFOBEAMER>>>>>>>>>>>>>>>>>>>"
 
  if [ $FULLSCREEN = "1" ]; then
