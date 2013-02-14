@@ -1,10 +1,12 @@
 #!/bin/bash
 
-CONFIG_FILE=$INFOBEAMER_CWD/main.conf
+CONFIG_FILE=main.conf
 
-echo $CONFIG_FILE
 if [[ -f $CONFIG_FILE ]]; then
         . $CONFIG_FILE
+else
+   echo "main.conf not found! Run commands from the directory where main.conf is located."
+   exit
 fi
 
 SUBDIR="kitchen_cycler/weather"

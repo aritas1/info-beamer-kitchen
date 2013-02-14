@@ -14,4 +14,4 @@ echo "<<<<<<<<<<<<<<<<<<STARTING INFOBEAMER>>>>>>>>>>>>>>>>>>>"
     ../info-beamer/info-beamer ./kitchen_cycler/ &
  fi
 
-./helper/weather_updater.sh
+./helper/weather_updater.sh > /dev/null 2>&1
