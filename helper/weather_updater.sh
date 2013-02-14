@@ -21,7 +21,7 @@ do
  mv $TMP $ABSDIR/forecast
  echo "[`date`] got forecast"
  wget $WEATHERCAM -t $WGET_TRIES --connect-timeout=$WGET_TIMEOUT --read-timeout=$WGET_TIMEOUT -O $TMP #>/dev/null 2>&1
- mv $TMP $ABSDIR/1.jpg
+ mv $TMP $ABSDIR/weather_background.jpg
  echo "[`date`] got weathercam pic"
  java -cp $INFOBEAMER_CWD/helper/ Clock kitchen_cycler/weather/analogclock/ debug
  echo "[`date`] set clock"
