@@ -23,7 +23,12 @@ do
  mv $TMP $ABSDIR/forecast
  echo "[`date`] got forecast"
  wget $WEATHERCAM -t $WGET_TRIES --connect-timeout=$WGET_TIMEOUT --read-timeout=$WGET_TIMEOUT -O $TMP #>/dev/null 2>&1
- mv $TMP $ABSDIR/weather_background.jpg
+ weathersize=`stat -c %s $TMP`
+ if [ $weathersize -gt 0 ]
+ then
+  echo "move weather pic, size was $weathersize"
+  mv $TMP $ABSDIR/weather_background.jpg
+ fi
  echo "[`date`] got weathercam pic"
  java -cp $INFOBEAMER_CWD/helper/ Clock kitchen_cycler/weather/analogclock/ debug
  echo "[`date`] set clock"

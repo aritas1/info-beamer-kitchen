@@ -15,5 +15,6 @@ rm -rf scanner
 mkdir scanner
 cp -Rf ../barcodescanner/prog3 ./scanner/scan_collector
 cp -Rf ../barcodescanner/scanner.jar ./scanner/scanner.jar
+chmod 755 ./scanner/scanner.jar
 sudo chown root ./scanner/scan_collector
 sudo chmod 4755 ./scanner/scan_collector
