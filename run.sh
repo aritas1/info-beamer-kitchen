@@ -7,9 +7,7 @@ if [[ -f $CONFIG_FILE ]]; then
 fi
 
 # kill all pssible running programs
-killall weather_updater.sh > /dev/null 2>&1
-killall info-beamer > /dev/null 2>&1
-killall scanner.jar > /dev/null 2>&1
+./stop.sh
 
 
 touch $INFOBEAMER_CWD/log/info-beamer
