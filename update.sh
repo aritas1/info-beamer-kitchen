@@ -1,4 +1,4 @@
 #!/bin/sh
 
-./update_all.sh
-./collect_files.sh
+./helper/maintenance/update_all.sh
+./helper/maintenance/collect_files.sh
