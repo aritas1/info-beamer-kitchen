@@ -28,6 +28,7 @@ do
  then
   echo "move weather pic, size was $weathersize"
   mv $TMP $ABSDIR/weather_background.jpg
+  touch $ABSDIR/weather_background.jpg
  fi
  echo "[`date`] got weathercam pic"
  java -cp $INFOBEAMER_CWD/helper/ Clock kitchen_cycler/weather/analogclock/ debug
