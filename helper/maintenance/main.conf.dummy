@@ -27,6 +27,14 @@ WGET_TRIES=1
 # How long should wget wait before timing out
 WGET_TIMEOUT=30
 
+##########################################################
+#                                                        #
+#                 Photo Settings                         #
+#                                                        #
+##########################################################
+# defines the path to the .jpg files
+PHOTO_FILE_PATH=/home/beamer/Dropbox/bilder
+
 ###########################################################
 #                                                         #
 #                HANDLE WITH CARE:                        #
