@@ -2,3 +2,4 @@ kitchen_cycler/
 scanner/
 *.class
 log/*
+main.conf

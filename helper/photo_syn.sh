@@ -9,4 +9,8 @@ else
    exit
 fi
 
-rsync --delete -ruv --include='*.jpg' --exclude='*' $PHOTO_FILE_PATH/ $INFOBEAMER_CWD/kitchen_cycler/photos/ --backup-dir=/tmp
+while :
+do
+ rsync --delete -ruv --include='*.jpg' --exclude='*' $PHOTO_FILE_PATH/ $INFOBEAMER_CWD/kitchen_cycler/photos/ --backup-dir=/tmp
+ sleep 29
+done
