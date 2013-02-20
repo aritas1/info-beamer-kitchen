@@ -33,5 +33,5 @@ do
  echo "[`date`] got weathercam pic"
  java -cp $INFOBEAMER_CWD/helper/ Clock kitchen_cycler/weather/analogclock/ debug
  echo "[`date`] set clock"
- sleep 30
+ sleep 120
 done
