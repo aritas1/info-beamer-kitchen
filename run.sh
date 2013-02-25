@@ -15,6 +15,7 @@ touch $INFOBEAMER_CWD/log/scanner
 touch $INFOBEAMER_CWD/log/weather_updater
 touch $INFOBEAMER_CWD/log/photo_syn
 touch $INFOBEAMER_CWD/log/analogclock_updater
+touch $INFOBEAMER_CWD/log/statistics
 
 
 echo "[`date`] Start logging" > $INFOBEAMER_CWD/log/info-beamer
@@ -22,6 +23,7 @@ echo "[`date`] Start logging" > $INFOBEAMER_CWD/log/scanner
 echo "[`date`] Start logging" > $INFOBEAMER_CWD/log/weather_updater
 echo "[`date`] Start logging" > $INFOBEAMER_CWD/log/photo_syn
 echo "[`date`] Start logging" > $INFOBEAMER_CWD/log/analogclock_updater
+echo "[`date`] Start logging" > $INFOBEAMER_CWD/log/statistics
 
 echo "<<<<<<<<<<<<<<<<<<STARTING INFOBEAMER>>>>>>>>>>>>>>>>>>>"
 
@@ -41,7 +43,7 @@ export DISPLAY=:0
 ./helper/photo_syn.sh > $INFOBEAMER_CWD/log/photo_syn 2>&1 &
 
 # start the scanner
-#java -jar $INFOBEAMER_CWD/scanner/scanner.jar $INFOBEAMER_CWD/scanner/ scan_collector > $INFOBEAMER_CWD/log/scanner 2>&1 &
+java -jar $INFOBEAMER_CWD/scanner/scanner.jar $INFOBEAMER_CWD/scanner/ scan_collector > $INFOBEAMER_CWD/log/scanner 2>&1 &
 
 
 # start clock updater
@@ -49,4 +51,7 @@ export DISPLAY=:0
 
 #start simpleefa updater
 ./helper/simpleefa-connections.sh > $INFOBEAMER_CWD/log/simpleefa_updater 2>&1 &
+
+#start statistics updater
+./helper/statistics_updater.sh > $INFOBEAMER_CWD/log/statistics 2>&1 &
 
