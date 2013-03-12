@@ -1,6 +1,6 @@
 #!/bin/bash
-../apache-tomcat-7.0.35/bin/shutdown.sh
-../apache-tomcat-7.0.35/bin/startup.sh
+../apache-tomcat/bin/shutdown.sh
+../apache-tomcat/bin/startup.sh
 
 
 sleep 15
