@@ -4,8 +4,7 @@ echo ">>>>>>>>>>>>>>> Collecting all needed files <<<<<<<<<<<<<<<<<"
 
 echo ">>>>>>>>>>>>>>> INFO-BEAMER NODES <<<<<<<<<<<<<<<<<"
 rm -rf kitchen_cycler
-mkdir kitchen_cycler
-cp -Rf ../info-beamer-nodes/kitchen_cycler/* ./kitchen_cycler/
+git clone git@github.com:aamuuninen/info-beamer-kitchen-cycler.git kitchen_cycler
 
 echo ">>>>>>>>>>>>>>> INFO-BEAMER BARCODESCANNER NODE <<<<<<<<<<<<<<<<<"
 cp -Rf ../barcodescanner/barcodebeamer ./kitchen_cycler/
