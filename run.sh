@@ -31,9 +31,9 @@ echo "<<<<<<<<<<<<<<<<<<STARTING INFOBEAMER>>>>>>>>>>>>>>>>>>>"
 # start infobeamer
 export DISPLAY=:0
  if [ $FULLSCREEN = "1" ]; then
-   INFOBEAMER_FULLSCREEN=1 ../info-beamer/info-beamer ./kitchen_cycler/ > $INFOBEAMER_CWD/log/info-beamer 2>&1 &
+   INFOBEAMER_FULLSCREEN=1 ../info-beamer-pi/info-beamer ./kitchen_cycler/ > $INFOBEAMER_CWD/log/info-beamer 2>&1 &
  else
-    ../info-beamer/info-beamer ./kitchen_cycler/ > $INFOBEAMER_CWD/log/info-beamer 2>&1 &
+    ../info-beamer-pi/info-beamer ./kitchen_cycler/ > $INFOBEAMER_CWD/log/info-beamer 2>&1 &
  fi
 
 # start the weather / clock updater
